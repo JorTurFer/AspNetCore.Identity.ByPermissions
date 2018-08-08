@@ -7,7 +7,7 @@ using AspNetCore.Identity.ByPermissions;
 using Identity_By_Permissions_Example.Extensions;
 using Identity_By_Permissions_Example.Helpers;
 using Identity_By_Permissions_Example.Models;
-using Identity_By_Permissions_Example.ViewModels;
+using Identity_By_Permissions_Example.Models.PermissionsViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 

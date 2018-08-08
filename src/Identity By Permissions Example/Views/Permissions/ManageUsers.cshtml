@@ -1,7 +1,24 @@
-﻿
-@{
-    ViewData["Title"] = "ManageUsers";
+﻿@{
+    Layout = null;
 }
+<div class="well row">
+    <div class="col-md-12">
+        <div class="form-group">
+            <label>Buscar:</label>
+            <input type="text" class="form-control" id="searchInput" />
+        </div>
+    </div>
+</div>
+<hr />
+<div id="usuarios">
 
-<h2>ManageUsers</h2>
-
+</div>
+<script>
+    var pageSize = 10;
+    $(document).ready(function () {
+        getUsersGrid('@Url.Action("GetUsersGrid", "Manage")', $("#searchInput").val(), 'username', true, 1, pageSize);
+        $(searchInput).on('input',(function (){
+            getUsersGrid('@Url.Action("GetUsersGrid", "Manage")', $("#searchInput").val(), 'username', true, 1, pageSize);
+        }));
+    });
+</script>

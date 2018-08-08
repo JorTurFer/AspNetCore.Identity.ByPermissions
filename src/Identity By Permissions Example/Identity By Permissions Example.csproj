@@ -26,4 +26,8 @@
     <ProjectReference Include="..\AspNetCore.Identity.ByPermissions\AspNetCore.Identity.ByPermissions.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
+  </ItemGroup>
+
 </Project>

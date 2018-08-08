@@ -1,7 +1,37 @@
-﻿
+﻿@model PermissionsManageViewModel
+
 @{
-    ViewData["Title"] = "PermissionsManage";
+    Layout = null;
 }
+<input type="hidden" id="roleId" value="@Model.RoleId" />
+<div class="container">
+    @foreach (var group in Model.Groups)
+    {
+        <div class="row justify-content-center">
+            <div class="col-md-2 col-md-offset-4">
+                <hr class="style3" />
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            @foreach (var item in Model.Permissions.Where(x => x.PolicyGroup == group))
+            {
+                <div class="col-md-3">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="@item.Id" checked="@item.IsActive">
+                        <label class="custom-control-label" for="@item.Id">@item.PolicyDesiption</label>
+                    </div>
+                </div>
+            }
+        </div>
+    }
 
-<h2>PermissionsManage</h2>
+</div>
 
+<script>
+    $(document).ready(function () {
+        $(":checkbox").change(function (){
+            var id = $(event.target).attr('id');
+            updateClaims('@Url.Action("UpdateRoleClaims", "Manage")', id);
+    });
+    });
+</script>

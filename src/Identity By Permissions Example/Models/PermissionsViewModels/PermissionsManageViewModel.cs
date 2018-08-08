@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Identity_By_Permissions_Example.ViewModels;
 
-namespace Identity_By_Permissions_Example.ViewModels
+namespace Identity_By_Permissions_Example.Models.PermissionsViewModels
 {
     public class PermissionsManageViewModel
     {
