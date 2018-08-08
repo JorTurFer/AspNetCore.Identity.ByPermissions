@@ -136,7 +136,7 @@ namespace Identity_By_Permissions_Example.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> ClaimsManage(string roleId)
+        public async Task<IActionResult> PermissionsManage(string roleId)
         {
             var role = await _roleManager.FindByIdAsync(roleId);
             if (role == null)
@@ -149,29 +149,23 @@ namespace Identity_By_Permissions_Example.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> UpdateRoleClaims(string roleId, int policyId, bool set)
+        public async Task<IActionResult> UpdateRolePermissions(string roleId, int policyId, bool set)
         {
-            //Obtengo el rol
             var role = await _roleManager.FindByIdAsync(roleId);
             if (role == null)
                 return Json(false);
 
-            //Obtengo la politica con el claim que que hay que actualizar
             var policyItem = _permissionService.GetPermissionById(policyId);
             if (policyItem == null)
                 return Json(false);
 
-            //Si tengo que setear el claim
             if (set)
             {
-                //Añado el claim al rol
                 var res = await _roleManager.AddClaimAsync(role, new Claim(policyItem.PermissionName, policyItem.PermissionName));
                 return Json(res.Succeeded);
             }
-            //Si tengo que remover el claim
             else
             {
-                //Elimino el claim
                 var res = await _roleManager.RemoveClaimAsync(role, new Claim(policyItem.PermissionName, policyItem.PermissionName));
                 return Json(res.Succeeded);
             }
