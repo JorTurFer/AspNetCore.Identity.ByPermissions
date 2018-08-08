@@ -24,13 +24,9 @@
 </div>
 
 @section Scripts {
-    <environment Names="Development">
-        <script src="~/js/permissions/permissions.manage.roles.js" asp-append-version="true"></script>
-        <script src="~/js/permissions/permissions.manage.users.js" asp-append-version="true"></script>
-    </environment>
-    <environment Names="Production,Staging">
-        <script src="~/js/min/usuarios/usuarios.manage.min.js" asp-append-version="true"></script>
-    </environment>
+    <script src="~/js/permissions/permissions.manage.roles.js" asp-append-version="true"></script>
+    <script src="~/js/permissions/permissions.manage.users.js" asp-append-version="true"></script>
+
     <script type="text/javascript">
         //Cargo la pagina de usuarios cuando acaba de cargar el DOM
         $(document).ready(GetUsers('@Url.Action("ManageUsers", "Permissions")'));
