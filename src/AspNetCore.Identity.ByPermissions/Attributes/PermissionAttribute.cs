@@ -5,9 +5,9 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace AspNetCore.Identity.ByPermissions
 {
-  public class AuthorizePermissionAttribute : AuthorizeAttribute
+  public class PermissionAttribute : AuthorizeAttribute
   {
-    public AuthorizePermissionAttribute(string Permission,string Description):base(Permission)
+    public PermissionAttribute(string Permission,string Description):base(Permission)
     {
       this.Description = Description; 
     }
