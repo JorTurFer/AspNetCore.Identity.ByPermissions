@@ -13,7 +13,6 @@ using Microsoft.AspNetCore.Mvc;
 namespace Example.Areas.Permissions.Controllers
 {
     [Area("Permissions")]
-    [Permission("Administracion", "Administración de Accesos")]
     [Route("[area]/[controller]/[action]")]
     public class PermissionsController : Controller
     {

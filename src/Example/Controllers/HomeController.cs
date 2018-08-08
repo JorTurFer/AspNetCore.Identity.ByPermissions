@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Example.Models;
+using AspNetCore.Identity.ByPermissions;
 
 namespace Example.Controllers
 {
@@ -15,20 +16,21 @@ namespace Example.Controllers
             return View();
         }
 
+        [Permission("HomeAbout", "Can about page")]
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";
 
             return View();
         }
-
+        [Permission("HomeContact", "Can contact page")]
         public IActionResult Contact()
         {
             ViewData["Message"] = "Your contact page.";
 
             return View();
         }
-
+        [Permission("HomePrivacy", "Can privacy page")]
         public IActionResult Privacy()
         {
             return View();

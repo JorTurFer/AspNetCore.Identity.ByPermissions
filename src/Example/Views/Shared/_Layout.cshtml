@@ -1,9 +1,11 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Authorization
+@inject IAuthorizationService AuthorizationService
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Example</title>
+    <title>@ViewData["Title"] - Example of "Identity By Permissions"</title>
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -31,8 +33,20 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    @if ((await AuthorizationService.AuthorizeAsync(User, "HomeAbout")).Succeeded)
+                    {
+                        <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+
+                    }
+                    @if ((await AuthorizationService.AuthorizeAsync(User, "HomeContact")).Succeeded)
+                    {
+                        <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+
+                    }
+                    @if ((await AuthorizationService.AuthorizeAsync(User, "HomePrivacy")).Succeeded)
+                    {
+                        <li><a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a></li>
+                    }
                 </ul>
                 <partial name="_LoginPartial" />
             </div>

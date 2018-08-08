@@ -22,7 +22,7 @@
 
     <div class="row">
         <div class="col-md-2 col-md-offset-6">
-            <button class="btn-primary form-control" id="back" onclick="getUsersGrid('@Url.Action("GetUsersGrid", "Manage")','@Model.VmPrevious.Text','@Model.VmPrevious.Sort','@Model.VmPrevious.Ascending','@Model.VmPrevious.Page','@Model.VmPrevious.PageSize')">Atras</button>
+            <button class="btn-primary form-control" id="back" onclick="getUsersGrid('@Url.Action("GetUsersGrid", "Permissions")','@Model.VmPrevious.Text','@Model.VmPrevious.Sort','@Model.VmPrevious.Ascending','@Model.VmPrevious.Page','@Model.VmPrevious.PageSize')">Atras</button>
         </div>
     </div>
 </div>
@@ -31,7 +31,7 @@
     $(document).ready(function () {
         $(":checkbox").change(function (){
             var roleName = $(event.target).attr('id');
-            updateUserRole('@Url.Action("UpdateUserRole", "Manage")', $("#userId").val(), roleName);
+            updateUserRole('@Url.Action("UpdateUserRole", "Permissions")', $("#userId").val(), roleName);
     });
     });
 </script>
