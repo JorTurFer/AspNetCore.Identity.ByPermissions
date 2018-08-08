@@ -10,6 +10,16 @@ namespace Identity_By_Permissions_Example.Extensions
 {
     public static class UserManagerExtensions
     {
+        /// <summary>
+        /// Extension for get the page of users
+        /// </summary>
+        /// <param name="_manager"></param>
+        /// <param name="text">Search Input</param>
+        /// <param name="page">Current Page</param>
+        /// <param name="pageSize">Results per Page</param>
+        /// <param name="sort">Sort By:</param>
+        /// <param name="ascending">Sort ascending or descending</param>
+        /// <returns></returns>
         public static UsersPageDataViewModel GetUserPageAsync(this UserManager<ApplicationUser> _manager, string text, int page, int pageSize, string sort, bool @ascending)
         {
             var usersQuery = _manager.Users;
