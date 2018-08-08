@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Identity_By_Permissions_Example.Data;
 using Identity_By_Permissions_Example.Models;
 using Identity_By_Permissions_Example.Services;
+using AspNetCore.Identity.ByPermissions;
 
 namespace Identity_By_Permissions_Example
 {
@@ -33,8 +34,14 @@ namespace Identity_By_Permissions_Example
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
+            services.AddAuthorization(options =>
+            {
+                options.AddPermissions(new PermissionService());
+            });
+
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
+            services.AddSingleton<IPermissionService, PermissionService>();
 
             services.AddMvc();
         }
