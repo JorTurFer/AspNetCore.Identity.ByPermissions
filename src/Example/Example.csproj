@@ -17,7 +17,6 @@
   <ItemGroup>
     <Folder Include="Areas\Permissions\Data\" />
     <Folder Include="Areas\Permissions\Models\Entities\" />
-    <Folder Include="Areas\Permissions\Views\" />
   </ItemGroup>
 
 </Project>

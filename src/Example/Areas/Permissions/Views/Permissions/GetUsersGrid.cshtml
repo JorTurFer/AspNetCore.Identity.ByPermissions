@@ -1,0 +1,98 @@
+﻿@using Example.Areas.Permissions.Models.ViewModels
+@model GridUsersViewModel
+@{
+    Layout = null;
+}
+
+@if (!Model.Users.Any())
+{
+    <div class="alert alert-warning">No se han encontrado usuarios.</div>
+}
+else
+{
+    <input id="pageSize" type="hidden" value="@Model.PageSize" />
+    <table class="table table-striped table-hover site-user-list">
+        <thead>
+            <tr>
+                <th>
+                    <a id="user">
+                        User
+                    </a>
+                </th>
+                <th>
+                    <a id="email">
+                        Email
+                    </a>
+                </th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model.Users)
+            {
+                <tr>
+                    <td>@user.UserName</td>
+                    <td><a href="mailto:@user.Email">@user.Email</a></td>
+                    <td>
+                        <a class="btn btn-sm btn-info" id="@user.Id">Editar</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-sm btn-danger" data-targetid="@user.Id" data-modal="#confirm-remove-user">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    @if (Model.TotalUsers > Model.Users.Count())
+    {
+        var lastPage = (int)Math.Ceiling((decimal)Model.TotalUsers / Model.PageSize);
+
+        <div class="row">
+            <div class="col-md-offset-3">
+                <button id="first" class="btn btn-primary"><span class="glyphicon glyphicon-step-backward"></span></button>
+                <button id="prev" class="btn btn-primary"><span class="glyphicon glyphicon-chevron-left"></span></button>
+                <span style="margin: 10px">Página @Model.Page de @lastPage</span>
+                <button id="next" class="btn btn-primary"><span class="glyphicon glyphicon-chevron-right"></span></button>
+                <button id="last" class="btn btn-primary"><span class="glyphicon glyphicon-step-forward"></span></button>
+            </div>
+        </div>
+    }
+}
+<div class="modal fade site-modal-remove" id="confirm-remove-user" data-url="@Url.Action("RemoveUser")">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-danger">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Borrar usuario</h4>
+            </div>
+            <div class="modal-body">
+                <p>El usuario será borrado permanentemente.</p>
+                <p>¿Desea continuar?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-danger" data-dismiss="modal">Eliminar</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    @{
+        var last = (int)Math.Ceiling((decimal)Model.TotalUsers / Model.PageSize);
+    }
+    $('#first').click(function () { getUsersGrid('@Url.Action("GetUsersGrid", "Manage")', $("#searchInput").val(), '@Model.Sort', '@Model.Ascending', '1', $("#pageSize").val()); });
+    $('#prev').click(function () { getUsersGrid('@Url.Action("GetUsersGrid", "Manage")', $("#searchInput").val(),'@Model.Sort','@Model.Ascending', '@Math.Max(1, Model.Page - 1)', $("#pageSize").val()); });
+    $('#next').click(function () { getUsersGrid('@Url.Action("GetUsersGrid", "Manage")', $("#searchInput").val(),'@Model.Sort','@Model.Ascending', '@Math.Min(last, Model.Page + 1)', $("#pageSize").val()); });
+    $('#last').click(function () { getUsersGrid('@Url.Action("GetUsersGrid", "Manage")', $("#searchInput").val(), '@Model.Sort', '@Model.Ascending', '@last', $("#pageSize").val()); });
+    $('#user').click(function () { getUsersGrid('@Url.Action("GetUsersGrid", "Manage")', $("#searchInput").val(), 'username', '@Model.InvertAscending', '@Model.Page', $("#pageSize").val()); });
+    $('#name').click(function () { getUsersGrid('@Url.Action("GetUsersGrid", "Manage")', $("#searchInput").val(), 'name', '@Model.InvertAscending', '@Model.Page', $("#pageSize").val()); });
+    $('#email').click(function () { getUsersGrid('@Url.Action("GetUsersGrid", "Manage")', $("#searchInput").val(), 'email', '@Model.InvertAscending', '@Model.Page', $("#pageSize").val()); });
+
+    $('.editarRoles').click(function () { getUserRoles('@Url.Action("UserRolesManage", "Manage")', $("#searchInput").val(), '@Model.Sort', '@Model.Ascending', '@Model.Page', $("#pageSize").val(), $(this).attr('id')); });
+
+    activateModalActions();
+</script>

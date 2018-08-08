@@ -1,0 +1,38 @@
+﻿@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Administración de Accesos";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div>
+    <hr />
+    <div class="row">
+        <div class="col-md-3">
+            <ul class="nav nav-pills nav-stacked">
+                <li class="active" id="btnUsers">
+                    <a onclick="GetUsers('@Url.Action("ManageUsers", "Manage")')">Usuarios</a>
+                </li>
+                <li class="null" id="btnRoles">
+                    <a onclick="GetRoles('@Url.Action("ManageRoles", "Manage")')">Permisos</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-9" id="content">
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <environment Names="Development">
+        <script src="~/js/usuarios/usuarios.manage.roles.js" asp-append-version="true"></script>
+        <script src="~/js/usuarios/usuarios.manage.usuarios.js" asp-append-version="true"></script>
+    </environment>
+    <environment Names="Production,Staging">
+        <script src="~/js/min/usuarios/usuarios.manage.min.js" asp-append-version="true"></script>
+    </environment>
+    <script type="text/javascript">
+        //Cargo la pagina de usuarios cuando acaba de cargar el DOM
+        $(document).ready(GetUsers('@Url.Action("ManageUsers", "Manage")'));
+    </script>
+}

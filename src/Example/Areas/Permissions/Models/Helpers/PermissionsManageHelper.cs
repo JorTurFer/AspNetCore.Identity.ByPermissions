@@ -12,13 +12,13 @@ namespace Example.Areas.Permissions.Models.Helpers
   {
     internal static PermissionsManageViewModel GetPermissionsManageViewModel(IList<Claim> claims, IdentityRole role, IPermissionService permissionService)
     {
-      List<PermissionsItemViewModel> policyItemViewModel = new List<PermissionsItemViewModel>();
+      List<PermissionsItemViewModel> permissionsItemViewModel = new List<PermissionsItemViewModel>();
       foreach (var permission in permissionService.GetPermissions())
       {
         var exist = claims.Any(x => string.Compare(x.Type, permission.PermissionName, true) == 0);
-        policyItemViewModel.Add(new PermissionsItemViewModel { PermissionId = permission.PermissionId, PermissionName = permission.PermissionName, PermissionDescription = permission.PermissionDescription, IsActive = exist, PermissionGroup = permission.PermissionGroup });
+        permissionsItemViewModel.Add(new PermissionsItemViewModel { PermissionId = permission.PermissionId, PermissionName = permission.PermissionName, PermissionDescription = permission.PermissionDescription, IsActive = exist, PermissionGroup = permission.PermissionGroup });
       }
-      return new PermissionsManageViewModel { PolicyItems = policyItemViewModel, RoleId = role.Id, Groups = policyItemViewModel.GroupBy(x => x.PolicyGroup).Select(x => x.Key) };
+      return new PermissionsManageViewModel { PermissionItems = permissionsItemViewModel, RoleId = role.Id, Groups = permissionsItemViewModel.GroupBy(x => x.PermissionGroup).Select(x => x.Key) };
 
     }
   }

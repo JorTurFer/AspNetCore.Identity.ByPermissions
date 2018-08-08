@@ -1,0 +1,44 @@
+﻿@inject RoleManager<IdentityRole> RoleManager
+
+@{
+    Layout = null;
+}
+
+<h5 style="text-align:center">Crear un nuevo Rol</h5>
+<div class="container">
+    <div class="row">
+        <div class="col-md-5 col-md-offset-1">
+            <input type="text" class="form-control" id="roleName" />
+        </div>
+        <div class="col-md-2">
+            <button class="btn-primary form-control" id="newRole" onclick="saveNewRole('@Url.Action("AddNewRole", "Manage")','@Url.Action("ClaimsManage", "Manage")')">Guardar</button>
+        </div>
+    </div>
+</div>
+<hr class="col-md-offset-2" />
+<h5 style="text-align:center">Modificar un Rol</h5>
+<div class="container">
+    <div class="row">
+        <div class="col-md-5 col-md-offset-1">
+            @{
+                var listRoles = RoleManager.Roles.OrderBy(x => x.Name).ToList();
+            }
+            @Html.DropDownList("listaRolesUpd", new SelectList(listRoles, "Id", "Name"), "Seleccione un Rol..", new { @class = "form-control dropdown desplegables", @onchange = "getClaims('" + @Url.Action("ClaimsManage", "Manage") + "')" })
+        </div>
+    </div>
+</div>
+<div id="claims">
+    <!-- AQUI SE INTRODUCIRAN LOS CLAIMS-->
+</div>
+<hr class="col-md-offset-2" />
+<h5 style="text-align:center">Borrar un Rol</h5>
+<div class="container">
+    <div class="row">
+        <div class="col-md-5 col-md-offset-1">
+            @Html.DropDownList("listaRolesDel", new SelectList(listRoles, "Id", "Name"), "Seleccione un Rol..", new { @class = "form-control dropdown desplegables" })
+        </div>
+        <div class="col-md-2">
+            <button class="btn-primary form-control" id="delRole" onclick="removeRole('@Url.Action("RemoveRole", "Manage")','@Url.Action("ClaimsManage", "Manage")')">Borrar</button>
+        </div>
+    </div>
+</div>

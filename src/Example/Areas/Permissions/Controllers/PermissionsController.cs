@@ -4,13 +4,16 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using AspNetCore.Identity.ByPermissions;
+using Example.Areas.Permissions.Models.Extensions;
 using Example.Areas.Permissions.Models.Helpers;
+using Example.Areas.Permissions.Models.ViewModels;
+using Example.Areas.Permissions.ViewModel;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Example.Areas.Permissions.Controllers
 {
-    [Area("Usuarios")]
+    [Area("Permissions")]
     [Permission("Administracion", "Administración de Accesos")]
     [Route("[area]/[controller]/[action]")]
     public class PermissionsController : Controller
@@ -150,27 +153,21 @@ namespace Example.Areas.Permissions.Controllers
       [ValidateAntiForgeryToken]
       public async Task<IActionResult> UpdateRolePermissions(string roleId, int permissionId, bool set)
       {
-        //Obtengo el rol
         var role = await _roleManager.FindByIdAsync(roleId);
         if (role == null)
           return Json(false);
 
-        //Obtengo la politica con el claim que que hay que actualizar
         var permissionItem = _permissionService.GetPermissionById(permissionId);
         if (permissionItem == null)
           return Json(false);
 
-        //Si tengo que setear el claim
         if (set)
         {
-          //Añado el claim al rol
           var res = await _roleManager.AddClaimAsync(role, new Claim(permissionItem.PermissionName, permissionItem.PermissionName));
           return Json(res.Succeeded);
         }
-        //Si tengo que remover el claim
         else
         {
-          //Elimino el claim
           var res = await _roleManager.RemoveClaimAsync(role, new Claim(permissionItem.PermissionName, permissionItem.PermissionName));
           return Json(res.Succeeded);
         }
