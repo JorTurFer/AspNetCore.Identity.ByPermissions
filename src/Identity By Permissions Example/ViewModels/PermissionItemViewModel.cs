@@ -1,6 +1,10 @@
-﻿namespace Identity_By_Permissions_Example.ViewModels
+﻿using AspNetCore.Identity.ByPermissions;
+
+namespace Identity_By_Permissions_Example.ViewModels
 {
-    internal class PermissionItemViewModel
+    public class PermissionItemViewModel : PermissionItem
     {
+        public bool IsActive { get; set; }
+
     }
 }

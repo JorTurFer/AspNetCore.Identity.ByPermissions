@@ -4,7 +4,9 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using AspNetCore.Identity.ByPermissions;
+using Identity_By_Permissions_Example.Helpers;
 using Identity_By_Permissions_Example.Models;
+using Identity_By_Permissions_Example.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -139,7 +141,7 @@ namespace Identity_By_Permissions_Example.Controllers
             if (role == null)
                 return Json(false);
             var claims = await _roleManager.GetClaimsAsync(role);
-            ClaimsManageViewModel model = PermissionsManageHelper.GetClaimsManageViewModel(claims, role, _permissionService);
+            PermissionsManageViewModel model = PermissionsManageHelper.GetPermissionsManageViewModel(claims, role, _permissionService);
 
             return View(model);
         }
