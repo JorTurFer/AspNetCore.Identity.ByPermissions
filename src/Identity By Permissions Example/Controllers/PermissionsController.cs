@@ -70,14 +70,21 @@ namespace Identity_By_Permissions_Example.Controllers
 
             var userRoles = await _userManager.GetRolesAsync(user);
 
+            //TODO check the previous error with the old system
+            List<UserRolesViewModel> rolesView = new List<UserRolesViewModel>();
+            foreach(var role in _roleManager.Roles)
+            {
+                var userRole = new UserRolesViewModel
+                {
+                    RoleName = role.Name,
+                    IsActive = userRoles.Contains(role.Name)
+                };
+                rolesView.Add(userRole);
+            }                            
             UserRolesManageViewModel vm = new UserRolesManageViewModel
             {
                 UserId = id,
-                Roles = _roleManager.Roles.Select(x => new UserRolesViewModel
-                {
-                    RoleName = x.Name,
-                    IsActive = userRoles.Contains(x.Name)
-                }),
+                Roles = rolesView,
                 VmPrevious = vmPrevious
             };
             return View(vm);

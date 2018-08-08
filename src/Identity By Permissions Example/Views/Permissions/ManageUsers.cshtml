@@ -4,21 +4,21 @@
 <div class="well row">
     <div class="col-md-12">
         <div class="form-group">
-            <label>Buscar:</label>
+            <label>Search:</label>
             <input type="text" class="form-control" id="searchInput" />
         </div>
     </div>
 </div>
 <hr />
-<div id="usuarios">
+<div id="users">
 
 </div>
 <script>
     var pageSize = 10;
     $(document).ready(function () {
-        getUsersGrid('@Url.Action("GetUsersGrid", "Manage")', $("#searchInput").val(), 'username', true, 1, pageSize);
+        getUsersGrid('@Url.Action("GetUsersGrid", "Permissions")', $("#searchInput").val(), 'username', true, 1, pageSize);
         $(searchInput).on('input',(function (){
-            getUsersGrid('@Url.Action("GetUsersGrid", "Manage")', $("#searchInput").val(), 'username', true, 1, pageSize);
+            getUsersGrid('@Url.Action("GetUsersGrid", "Permissions")', $("#searchInput").val(), 'username', true, 1, pageSize);
         }));
     });
 </script>

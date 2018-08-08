@@ -31,7 +31,7 @@
     $(document).ready(function () {
         $(":checkbox").change(function (){
             var id = $(event.target).attr('id');
-            updateClaims('@Url.Action("UpdateRoleClaims", "Manage")', id);
+            updatePermissions('@Url.Action("UpdateRolePermissions", "Permissions")', id);
     });
     });
 </script>

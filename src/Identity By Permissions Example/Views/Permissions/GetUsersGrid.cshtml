@@ -5,7 +5,7 @@
 
 @if (!Model.Users.Any())
 {
-    <div class="alert alert-warning">No se han encontrado usuarios.</div>
+    <div class="alert alert-warning">Not users found.</div>
 }
 else
 {
@@ -34,10 +34,10 @@ else
                     <td>@user.UserName</td>
                     <td><a href="mailto:@user.Email">@user.Email</a></td>
                     <td>
-                        <a class="btn btn-sm btn-info" id="@user.Id">Editar</a>
+                        <a class="btn btn-sm btn-info editRole" id="@user.Id">Edit</a>
                     </td>
                     <td>
-                        <a class="btn btn-sm btn-danger" data-targetid="@user.Id" data-modal="#confirm-remove-user">Eliminar</a>
+                        <a class="btn btn-sm btn-danger" data-targetid="@user.Id" data-modal="#confirm-remove-user">Delete</a>
                     </td>
                 </tr>
             }
@@ -52,7 +52,7 @@ else
             <div class="col-md-offset-3">
                 <button id="first" class="btn btn-primary"><span class="glyphicon glyphicon-step-backward"></span></button>
                 <button id="prev" class="btn btn-primary"><span class="glyphicon glyphicon-chevron-left"></span></button>
-                <span style="margin: 10px">Página @Model.Page de @lastPage</span>
+                <span style="margin: 10px">Page @Model.Page of @lastPage</span>
                 <button id="next" class="btn btn-primary"><span class="glyphicon glyphicon-chevron-right"></span></button>
                 <button id="last" class="btn btn-primary"><span class="glyphicon glyphicon-step-forward"></span></button>
             </div>
@@ -64,15 +64,15 @@ else
         <div class="modal-content">
             <div class="modal-header bg-danger">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Borrar usuario</h4>
+                <h4 class="modal-title">Delete user</h4>
             </div>
             <div class="modal-body">
-                <p>El usuario será borrado permanentemente.</p>
-                <p>¿Desea continuar?</p>
+                <p>The user will be permanet delete.</p>
+                <p>Do you want continue?</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary btn-danger" data-dismiss="modal">Eliminar</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary btn-danger" data-dismiss="modal">Delete</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
             </div>
         </div>
     </div>
@@ -83,15 +83,15 @@ else
     @{
         var last = (int)Math.Ceiling((decimal)Model.TotalUsers / Model.PageSize);
     }
-    $('#first').click(function () { getUsersGrid('@Url.Action("GetUsersGrid", "Manage")', $("#searchInput").val(), '@Model.Sort', '@Model.Ascending', '1', $("#pageSize").val()); });
-    $('#prev').click(function () { getUsersGrid('@Url.Action("GetUsersGrid", "Manage")', $("#searchInput").val(),'@Model.Sort','@Model.Ascending', '@Math.Max(1, Model.Page - 1)', $("#pageSize").val()); });
-    $('#next').click(function () { getUsersGrid('@Url.Action("GetUsersGrid", "Manage")', $("#searchInput").val(),'@Model.Sort','@Model.Ascending', '@Math.Min(last, Model.Page + 1)', $("#pageSize").val()); });
-    $('#last').click(function () { getUsersGrid('@Url.Action("GetUsersGrid", "Manage")', $("#searchInput").val(), '@Model.Sort', '@Model.Ascending', '@last', $("#pageSize").val()); });
-    $('#user').click(function () { getUsersGrid('@Url.Action("GetUsersGrid", "Manage")', $("#searchInput").val(), 'username', '@Model.InvertAscending', '@Model.Page', $("#pageSize").val()); });
-    $('#name').click(function () { getUsersGrid('@Url.Action("GetUsersGrid", "Manage")', $("#searchInput").val(), 'name', '@Model.InvertAscending', '@Model.Page', $("#pageSize").val()); });
-    $('#email').click(function () { getUsersGrid('@Url.Action("GetUsersGrid", "Manage")', $("#searchInput").val(), 'email', '@Model.InvertAscending', '@Model.Page', $("#pageSize").val()); });
+    $('#first').click(function () { getUsersGrid('@Url.Action("GetUsersGrid", "Permissions")', $("#searchInput").val(), '@Model.Sort', '@Model.Ascending', '1', $("#pageSize").val()); });
+    $('#prev').click(function () { getUsersGrid('@Url.Action("GetUsersGrid", "Permissions")', $("#searchInput").val(),'@Model.Sort','@Model.Ascending', '@Math.Max(1, Model.Page - 1)', $("#pageSize").val()); });
+    $('#next').click(function () { getUsersGrid('@Url.Action("GetUsersGrid", "Permissions")', $("#searchInput").val(),'@Model.Sort','@Model.Ascending', '@Math.Min(last, Model.Page + 1)', $("#pageSize").val()); });
+    $('#last').click(function () { getUsersGrid('@Url.Action("GetUsersGrid", "Permissions")', $("#searchInput").val(), '@Model.Sort', '@Model.Ascending', '@last', $("#pageSize").val()); });
+    $('#user').click(function () { getUsersGrid('@Url.Action("GetUsersGrid", "Permissions")', $("#searchInput").val(), 'username', '@Model.InvertAscending', '@Model.Page', $("#pageSize").val()); });
+    $('#name').click(function () { getUsersGrid('@Url.Action("GetUsersGrid", "Permissions")', $("#searchInput").val(), 'name', '@Model.InvertAscending', '@Model.Page', $("#pageSize").val()); });
+    $('#email').click(function () { getUsersGrid('@Url.Action("GetUsersGrid", "Permissions")', $("#searchInput").val(), 'email', '@Model.InvertAscending', '@Model.Page', $("#pageSize").val()); });
 
-    $('.editarRoles').click(function () { getUserRoles('@Url.Action("UserRolesManage", "Manage")', $("#searchInput").val(), '@Model.Sort', '@Model.Ascending', '@Model.Page', $("#pageSize").val(), $(this).attr('id')); });
+    $('.editRole').click(function () { getUserRoles('@Url.Action("UserRolesManage", "Permissions")', $("#searchInput").val(), '@Model.Sort', '@Model.Ascending', '@Model.Page', $("#pageSize").val(), $(this).attr('id')); });
 
     activateModalActions();
 </script>
