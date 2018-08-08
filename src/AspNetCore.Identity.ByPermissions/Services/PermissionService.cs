@@ -27,14 +27,14 @@ namespace AspNetCore.Identity.ByPermissions
         var controllerPermission = controller.GetCustomAttribute<PermissionAttribute>();
         //If the controller has PermissionAttribute, we register it
         if (controllerPermission != null)
-          _permissions.Add(new PermissionItem { PermissionId = _permissions.Count, PermissionName = controllerPermission.Policy, PermissionDesiption = controllerPermission.Description, PermissionGroup = nGroup });
+          _permissions.Add(new PermissionItem { PermissionId = _permissions.Count, PermissionName = controllerPermission.Policy, PermissionDescription = controllerPermission.Description, PermissionGroup = nGroup });
         //Same for the methods
         var methodPermissions = controller.GetMethods()
         .Where(type => type.CustomAttributes.Any(x => x.AttributeType == (typeof(PermissionAttribute))))
         .Select(x => x.GetCustomAttribute<PermissionAttribute>()).Distinct();
         foreach (var methodPermission in methodPermissions)
         {
-          _permissions.Add(new PermissionItem { PermissionId = _permissions.Count, PermissionName = methodPermission.Policy, PermissionDesiption = methodPermission.Description, PermissionGroup = nGroup });
+          _permissions.Add(new PermissionItem { PermissionId = _permissions.Count, PermissionName = methodPermission.Policy, PermissionDescription = methodPermission.Description, PermissionGroup = nGroup });
         }
         nGroup++;
       }

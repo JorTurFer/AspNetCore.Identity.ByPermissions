@@ -11,7 +11,7 @@ namespace AspNetCore.Identity.ByPermissions
     //Name to register
     public string PermissionName { get; set; }
     //Description to show
-    public string PermissionDesiption { get; set; }
+    public string PermissionDescription { get; set; }
     //Group of the Permission
     public int PermissionGroup { get; set; }
   }
