@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using AspNetCore.Identity.ByPermissions;
+using Identity_By_Permissions_Example.Extensions;
 using Identity_By_Permissions_Example.Helpers;
 using Identity_By_Permissions_Example.Models;
 using Identity_By_Permissions_Example.ViewModels;

@@ -17,9 +17,9 @@ namespace Identity_By_Permissions_Example.Helpers
             {
                 //Tiene la politica la coleccion de claims
                 var exist = claims.Any(x => string.Compare(x.Type, permission.PermissionName, true) == 0);
-                policyItemViewModel.Add(new PermissionItemViewModel { Id = permission.PermissionId, PolicyName = permission.PermissionName, PolicyDesiption = permission.PermissionDescription, IsActive = exist, PolicyGroup = permission.PermissionGroup });
+                policyItemViewModel.Add(new PermissionItemViewModel { PermissionId = permission.PermissionId, PermissionName = permission.PermissionName, PermissionDescription = permission.PermissionDescription, IsActive = exist, PermissionGroup = permission.PermissionGroup });
             }
-            return new PermissionsManageViewModel { PolicyItems = policyItemViewModel, RoleId = role.Id, Groups = policyItemViewModel.GroupBy(x => x.PolicyGroup).Select(x => x.Key) };
+            return new PermissionsManageViewModel { Permissions = policyItemViewModel, RoleId = role.Id, Groups = policyItemViewModel.GroupBy(x => x.PermissionGroup).Select(x => x.Key) };
         }
     }
 }

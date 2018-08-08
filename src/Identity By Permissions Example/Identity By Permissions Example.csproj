@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <UserSecretsId>aspnet-Identity_By_Permissions_Example-F6B7C14A-B511-49F5-B417-9E3494C6735A</UserSecretsId>
+    <RootNamespace>Identity_By_Permissions_Example</RootNamespace>
   </PropertyGroup>
 
 
