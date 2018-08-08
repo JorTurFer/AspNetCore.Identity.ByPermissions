@@ -5,14 +5,15 @@ using System.Text;
 
 namespace AspNetCore.Identity.ByPermissions
 {
-  public static class PermissionsExtensions
-  {
-    public static void AddPermissions(this AuthorizationOptions options, IPermissionService service)
+    public static class PermissionsExtensions
     {
-      foreach (var policyItem in service.GetPermissions())
-      {
-        options.AddPolicy(policyItem.PermissionName, policy => policy.RequireClaim(policyItem.PermissionName).Build());
-      }
+        //Add the attributed permissions to the registry
+        public static void AddPermissions(this AuthorizationOptions options, IPermissionService service)
+        {
+            foreach (var policyItem in service.GetPermissions())
+            {
+                options.AddPolicy(policyItem.PermissionName, policy => policy.RequireClaim(policyItem.PermissionName).Build());
+            }
+        }
     }
-  }
 }
