@@ -19,4 +19,13 @@
     <Folder Include="Areas\Permissions\Models\Entities\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="Areas\Permissions\Views\_ViewImports.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\Permissions\Views\_ViewStart.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+  </ItemGroup>
+
 </Project>

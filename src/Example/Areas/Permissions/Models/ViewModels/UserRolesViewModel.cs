@@ -1,4 +1,4 @@
-﻿namespace Example.Areas.Permissions.ViewModel
+﻿namespace Example.Areas.Permissions.Models.ViewModels
 {
   public class UserRolesViewModel
   {

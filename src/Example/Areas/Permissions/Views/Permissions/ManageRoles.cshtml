@@ -1,4 +1,4 @@
-﻿@inject RoleManager<IdentityRole> RoleManager
+﻿@inject RoleManager<IdentityRole> RolePermissionsr
 
 @{
     Layout = null;
@@ -11,7 +11,7 @@
             <input type="text" class="form-control" id="roleName" />
         </div>
         <div class="col-md-2">
-            <button class="btn-primary form-control" id="newRole" onclick="saveNewRole('@Url.Action("AddNewRole", "Manage")','@Url.Action("ClaimsManage", "Manage")')">Guardar</button>
+            <button class="btn-primary form-control" id="newRole" onclick="saveNewRole('@Url.Action("AddNewRole", "Permissions")','@Url.Action("PermissionsManage", "Permissions")')">Guardar</button>
         </div>
     </div>
 </div>
@@ -21,9 +21,9 @@
     <div class="row">
         <div class="col-md-5 col-md-offset-1">
             @{
-                var listRoles = RoleManager.Roles.OrderBy(x => x.Name).ToList();
+                var listRoles = RolePermissionsr.Roles.OrderBy(x => x.Name).ToList();
             }
-            @Html.DropDownList("listaRolesUpd", new SelectList(listRoles, "Id", "Name"), "Seleccione un Rol..", new { @class = "form-control dropdown desplegables", @onchange = "getClaims('" + @Url.Action("ClaimsManage", "Manage") + "')" })
+            @Html.DropDownList("listRolesUpd", new SelectList(listRoles, "Id", "Name"), "Select a rol..", new { @class = "form-control dropdown desplegables", @onchange = "getClaims('" + @Url.Action("ClaimsPermissions", "Permissions") + "')" })
         </div>
     </div>
 </div>
@@ -35,10 +35,10 @@
 <div class="container">
     <div class="row">
         <div class="col-md-5 col-md-offset-1">
-            @Html.DropDownList("listaRolesDel", new SelectList(listRoles, "Id", "Name"), "Seleccione un Rol..", new { @class = "form-control dropdown desplegables" })
+            @Html.DropDownList("listRolesDel", new SelectList(listRoles, "Id", "Name"), "Select a rol..", new { @class = "form-control dropdown desplegables" })
         </div>
         <div class="col-md-2">
-            <button class="btn-primary form-control" id="delRole" onclick="removeRole('@Url.Action("RemoveRole", "Manage")','@Url.Action("ClaimsManage", "Manage")')">Borrar</button>
+            <button class="btn-primary form-control" id="delRole" onclick="removeRole('@Url.Action("RemoveRole", "Permissions")','@Url.Action("ClaimsPermissions", "Permissions")')">Borrar</button>
         </div>
     </div>
 </div>

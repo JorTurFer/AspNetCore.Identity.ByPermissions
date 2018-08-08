@@ -7,7 +7,6 @@ using AspNetCore.Identity.ByPermissions;
 using Example.Areas.Permissions.Models.Extensions;
 using Example.Areas.Permissions.Models.Helpers;
 using Example.Areas.Permissions.Models.ViewModels;
-using Example.Areas.Permissions.ViewModel;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 

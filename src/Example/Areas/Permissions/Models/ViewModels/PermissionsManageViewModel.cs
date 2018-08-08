@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
-using Example.Areas.Permissions.Models.ViewModels;
 
-namespace Example.Areas.Permissions.Models.Helpers
+namespace Example.Areas.Permissions.Models.ViewModels
 {
-  internal class PermissionsManageViewModel
+  public class PermissionsManageViewModel
   {
     public IEnumerable<PermissionsItemViewModel> PermissionItems { get; set; }
     public string RoleId { get; set; }

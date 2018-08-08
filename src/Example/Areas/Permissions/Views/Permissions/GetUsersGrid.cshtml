@@ -84,15 +84,15 @@ else
     @{
         var last = (int)Math.Ceiling((decimal)Model.TotalUsers / Model.PageSize);
     }
-    $('#first').click(function () { getUsersGrid('@Url.Action("GetUsersGrid", "Manage")', $("#searchInput").val(), '@Model.Sort', '@Model.Ascending', '1', $("#pageSize").val()); });
-    $('#prev').click(function () { getUsersGrid('@Url.Action("GetUsersGrid", "Manage")', $("#searchInput").val(),'@Model.Sort','@Model.Ascending', '@Math.Max(1, Model.Page - 1)', $("#pageSize").val()); });
-    $('#next').click(function () { getUsersGrid('@Url.Action("GetUsersGrid", "Manage")', $("#searchInput").val(),'@Model.Sort','@Model.Ascending', '@Math.Min(last, Model.Page + 1)', $("#pageSize").val()); });
-    $('#last').click(function () { getUsersGrid('@Url.Action("GetUsersGrid", "Manage")', $("#searchInput").val(), '@Model.Sort', '@Model.Ascending', '@last', $("#pageSize").val()); });
-    $('#user').click(function () { getUsersGrid('@Url.Action("GetUsersGrid", "Manage")', $("#searchInput").val(), 'username', '@Model.InvertAscending', '@Model.Page', $("#pageSize").val()); });
-    $('#name').click(function () { getUsersGrid('@Url.Action("GetUsersGrid", "Manage")', $("#searchInput").val(), 'name', '@Model.InvertAscending', '@Model.Page', $("#pageSize").val()); });
-    $('#email').click(function () { getUsersGrid('@Url.Action("GetUsersGrid", "Manage")', $("#searchInput").val(), 'email', '@Model.InvertAscending', '@Model.Page', $("#pageSize").val()); });
+    $('#first').click(function () { getUsersGrid('@Url.Action("GetUsersGrid", "Permissions")', $("#searchInput").val(), '@Model.Sort', '@Model.Ascending', '1', $("#pageSize").val()); });
+    $('#prev').click(function () { getUsersGrid('@Url.Action("GetUsersGrid", "Permissions")', $("#searchInput").val(),'@Model.Sort','@Model.Ascending', '@Math.Max(1, Model.Page - 1)', $("#pageSize").val()); });
+    $('#next').click(function () { getUsersGrid('@Url.Action("GetUsersGrid", "Permissions")', $("#searchInput").val(),'@Model.Sort','@Model.Ascending', '@Math.Min(last, Model.Page + 1)', $("#pageSize").val()); });
+    $('#last').click(function () { getUsersGrid('@Url.Action("GetUsersGrid", "Permissions")', $("#searchInput").val(), '@Model.Sort', '@Model.Ascending', '@last', $("#pageSize").val()); });
+    $('#user').click(function () { getUsersGrid('@Url.Action("GetUsersGrid", "Permissions")', $("#searchInput").val(), 'username', '@Model.InvertAscending', '@Model.Page', $("#pageSize").val()); });
+    $('#name').click(function () { getUsersGrid('@Url.Action("GetUsersGrid", "Permissions")', $("#searchInput").val(), 'name', '@Model.InvertAscending', '@Model.Page', $("#pageSize").val()); });
+    $('#email').click(function () { getUsersGrid('@Url.Action("GetUsersGrid", "Permissions")', $("#searchInput").val(), 'email', '@Model.InvertAscending', '@Model.Page', $("#pageSize").val()); });
 
-    $('.editarRoles').click(function () { getUserRoles('@Url.Action("UserRolesManage", "Manage")', $("#searchInput").val(), '@Model.Sort', '@Model.Ascending', '@Model.Page', $("#pageSize").val(), $(this).attr('id')); });
+    $('.editarRoles').click(function () { getUserRoles('@Url.Action("UserRolesPermissions", "Permissions")', $("#searchInput").val(), '@Model.Sort', '@Model.Ascending', '@Model.Page', $("#pageSize").val(), $(this).attr('id')); });
 
     activateModalActions();
 </script>

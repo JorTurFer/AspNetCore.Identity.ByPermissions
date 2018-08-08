@@ -1,7 +1,6 @@
-﻿using Example.Areas.Permissions.Models.ViewModels;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace Example.Areas.Permissions.ViewModel
+namespace Example.Areas.Permissions.Models.ViewModels
 {
   public class UserRolesManageViewModel
   {
