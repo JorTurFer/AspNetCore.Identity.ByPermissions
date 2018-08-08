@@ -14,7 +14,7 @@ namespace AspNetCore.Identity.ByPermissions
     {
       _permissions = new List<PermissionItem>();
       //Get the assembly
-      Assembly asm = Assembly.GetExecutingAssembly();
+      Assembly asm = Assembly.GetEntryAssembly();
 
       //Get the controllers
       var controllers = asm.GetTypes()

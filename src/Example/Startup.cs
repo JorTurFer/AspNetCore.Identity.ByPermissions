@@ -45,6 +45,7 @@ namespace Example
             {
                 options.AddPermissions(new PermissionService());
             });
+            services.AddSingleton<IPermissionService, PermissionService>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
