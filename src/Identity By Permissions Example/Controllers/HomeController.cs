@@ -15,6 +15,7 @@ namespace Identity_By_Permissions_Example.Controllers
         {
             return View();
         }
+        //This line add a Permissions named "About" with a description and assigned to the action
         [Permission("About",  "Can see about page")]
         public IActionResult About()
         {
@@ -22,6 +23,7 @@ namespace Identity_By_Permissions_Example.Controllers
 
             return View();
         }
+        //This line add a Permissions named "Contact" with a description and assigned to the action
         [Permission("Contact", "Can see contact page")]
         public IActionResult Contact()
         {
