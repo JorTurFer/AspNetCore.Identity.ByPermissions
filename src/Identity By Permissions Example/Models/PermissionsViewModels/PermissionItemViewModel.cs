@@ -1,4 +1,4 @@
-﻿using AspNetCore.Identity.ByPermissions;
+﻿using AspNetStandard.Identity.ByPermissions;
 
 namespace Identity_By_Permissions_Example.Models.PermissionsViewModels
 {

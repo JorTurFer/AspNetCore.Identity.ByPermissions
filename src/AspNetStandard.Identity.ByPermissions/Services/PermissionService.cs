@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using Microsoft.AspNetCore.Mvc;
 
-namespace AspNetCore.Identity.ByPermissions
+namespace AspNetStandard.Identity.ByPermissions
 {
     public class PermissionService : IPermissionService
     {

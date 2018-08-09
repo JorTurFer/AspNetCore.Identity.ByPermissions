@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace AspNetCore.Identity.ByPermissions
+namespace AspNetStandard.Identity.ByPermissions
 {
     public static class PermissionsExtensions
     {
