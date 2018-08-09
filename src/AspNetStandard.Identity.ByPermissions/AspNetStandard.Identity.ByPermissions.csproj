@@ -10,8 +10,8 @@
     <Authors>Jorge Turrado Ferrero</Authors>
     <Description>Net Standard system to abstract the job ob create permissions based on claims, for more info, check the example in https://github.com/JorTurFer/AspNet.Identity.ByPermissions</Description>
     <PackageLicenseUrl>https://github.com/JorTurFer/AspNet.Identity.ByPermissions/blob/master/LICENSE</PackageLicenseUrl>
-    <Product>AspNet.Identity.ByPermissions</Product>
-    <PackageId>AspNetStandarde.Identity.ByPermissions</PackageId>
+    <Product>AspNetStandard.Identity.ByPermissions</Product>
+    <PackageId>AspNetStandard.Identity.ByPermissions</PackageId>
   </PropertyGroup>
 
   <ItemGroup>
