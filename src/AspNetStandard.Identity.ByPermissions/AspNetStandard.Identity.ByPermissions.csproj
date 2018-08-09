@@ -2,14 +2,16 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>AspNetCore.Identity.ByPermissions</AssemblyName>
+    <AssemblyName>AspNetStandard.Identity.ByPermissions</AssemblyName>
     <Copyright>Jorge Turrado Ferrero</Copyright>
     <PackageProjectUrl>https://github.com/JorTurFer/AspNetCore.Identity.ByPermissions</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/JorTurFer/AspNetCore.Identity.ByPermissions</RepositoryUrl>
-    <PackageTags>AspNet,Idenity, Permissions, Authorization</PackageTags>
+    <RepositoryUrl>https://github.com/JorTurFer/AspNet.Identity.ByPermissions</RepositoryUrl>
+    <PackageTags>AspNet,Idenity, Permissions, Authorization, NetStandard</PackageTags>
     <Authors>Jorge Turrado Ferrero</Authors>
-    <Description>System to abstract the job ob create permissions based on claims, for more info, check the example in https://github.com/JorTurFer/AspNetCore.Identity.ByPermissions</Description>
-    <PackageLicenseUrl>https://github.com/JorTurFer/AspNetCore.Identity.ByPermissions/blob/master/LICENSE</PackageLicenseUrl>
+    <Description>Net Standard system to abstract the job ob create permissions based on claims, for more info, check the example in https://github.com/JorTurFer/AspNet.Identity.ByPermissions</Description>
+    <PackageLicenseUrl>https://github.com/JorTurFer/AspNet.Identity.ByPermissions/blob/master/LICENSE</PackageLicenseUrl>
+    <Product>AspNet.Identity.ByPermissions</Product>
+    <PackageId>AspNetStandarde.Identity.ByPermissions</PackageId>
   </PropertyGroup>
 
   <ItemGroup>

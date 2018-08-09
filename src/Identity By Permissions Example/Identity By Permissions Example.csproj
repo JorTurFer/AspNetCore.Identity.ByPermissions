@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AspNetCore.Identity.ByPermissions\AspNetCore.Identity.ByPermissions.csproj" />
+    <ProjectReference Include="..\AspNetStandard.Identity.ByPermissions\AspNetStandard.Identity.ByPermissions.csproj" />
   </ItemGroup>
 
 </Project>

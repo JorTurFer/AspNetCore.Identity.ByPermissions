@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Identity_By_Permissions_Example.Models;
-using AspNetCore.Identity.ByPermissions;
+using AspNetStandard.Identity.ByPermissions;
 
 namespace Identity_By_Permissions_Example.Controllers
 {
