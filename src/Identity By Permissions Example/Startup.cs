@@ -11,7 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Identity_By_Permissions_Example.Data;
 using Identity_By_Permissions_Example.Models;
 using Identity_By_Permissions_Example.Services;
-using AspNetStandard.Identity.ByPermissions;
+using AspNetCore.Identity.ByPermissions;
 
 namespace Identity_By_Permissions_Example
 {

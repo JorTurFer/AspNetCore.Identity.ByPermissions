@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 
-namespace AspNetStandard.Identity.ByPermissions
+namespace AspNetCore.Identity.ByPermissions
 {
     /// <summary>
     /// Attribute for trigger the auto Permission detect

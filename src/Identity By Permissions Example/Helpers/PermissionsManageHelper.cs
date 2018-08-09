@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
-using AspNetStandard.Identity.ByPermissions;
+using AspNetCore.Identity.ByPermissions;
 using Identity_By_Permissions_Example.Models.PermissionsViewModels;
 using Microsoft.AspNetCore.Identity;
 

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace AspNetStandard.Identity.ByPermissions
+﻿namespace AspNetCore.Identity.ByPermissions
 {
     public class PermissionItem
     {
