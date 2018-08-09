@@ -13,6 +13,8 @@
     <Product>AspNetCore.Identity.ByPermissions</Product>
     <PackageId>AspNetCore.Identity.ByPermissions</PackageId>
     <RootNamespace>AspNetCore.Identity.ByPermissions</RootNamespace>
+    <AssemblyVersion>1.0.1.0</AssemblyVersion>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
