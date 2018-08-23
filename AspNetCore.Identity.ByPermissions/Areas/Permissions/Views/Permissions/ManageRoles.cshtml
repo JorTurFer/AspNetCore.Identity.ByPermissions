@@ -1,0 +1,44 @@
+﻿@inject RoleManager<IdentityRole> RoleManager
+
+@{
+    Layout = null;
+}
+
+<h5 style="text-align:center">Create new Role</h5>
+<div class="container">
+    <div class="row">
+        <div class="col-md-5 col-md-offset-1">
+            <input type="text" class="form-control" id="roleName" />
+        </div>
+        <div class="col-md-2">
+            <button class="btn-primary form-control" id="newRole" onclick="saveNewRole('@Url.Action("AddNewRole", "Permissions")','@Url.Action("PermissionsManage", "Permissions")')">Save</button>
+        </div>
+    </div>
+</div>
+<hr class="col-md-offset-2" />
+<h5 style="text-align:center">Modify a Role</h5>
+<div class="container">
+    <div class="row">
+        <div class="col-md-5 col-md-offset-1">
+            @{
+                var listRoles = RoleManager.Roles.OrderBy(x => x.Name).ToList();
+            }
+            @Html.DropDownList("listRolesUpd", new SelectList(listRoles, "Id", "Name"), "Select a role..", new { @class = "form-control dropdown desplegables", @onchange = "getPermissions('" + @Url.Action("PermissionsManage", "Permissions") + "')" })
+        </div>
+    </div>
+</div>
+<div id="permissions">
+    <!-- HERE GO THE PERMISSIONS-->
+</div>
+<hr class="col-md-offset-2" />
+<h5 style="text-align:center">Delete a role</h5>
+<div class="container">
+    <div class="row">
+        <div class="col-md-5 col-md-offset-1">
+            @Html.DropDownList("listRolesDel", new SelectList(listRoles, "Id", "Name"), "Select a role..", new { @class = "form-control dropdown desplegables" })
+        </div>
+        <div class="col-md-2">
+            <button class="btn-primary form-control" id="delRole" onclick="removeRole('@Url.Action("RemoveRole", "Permissions")','@Url.Action("PermissionsManage", "Permissions")')">Delete</button>
+        </div>
+    </div>
+</div>

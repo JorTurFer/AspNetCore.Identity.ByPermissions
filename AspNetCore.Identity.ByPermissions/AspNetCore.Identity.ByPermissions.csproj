@@ -11,7 +11,26 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Update="Areas\Permissions\Views\Home\OverrideExample.cshtml">
+    <Content Update="Areas\Permissions\Views\Permissions\GetUsersGrid.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\Permissions\Views\Permissions\Index.cshtml">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\Permissions\Views\Permissions\ManageRoles.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\Permissions\Views\Permissions\ManageUsers.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\Permissions\Views\Permissions\PermissionsManage.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\Permissions\Views\Permissions\UserRolesManage.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\Permissions\Views\_ViewImports.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
   </ItemGroup>
