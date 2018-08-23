@@ -13,6 +13,7 @@ using Microsoft.Extensions.Options;
 using Identity_By_Permissions_Example.Models;
 using Identity_By_Permissions_Example.Models.AccountViewModels;
 using Identity_By_Permissions_Example.Services;
+using AspNetCore.Identity.ByPermissions;
 
 namespace Identity_By_Permissions_Example.Controllers
 {

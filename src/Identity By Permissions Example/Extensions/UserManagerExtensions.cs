@@ -1,4 +1,5 @@
-﻿using Identity_By_Permissions_Example.Models;
+﻿using AspNetCore.Identity.ByPermissions;
+using Identity_By_Permissions_Example.Models;
 using Identity_By_Permissions_Example.Models.PermissionsViewModels;
 using Microsoft.AspNetCore.Identity;
 using System;
