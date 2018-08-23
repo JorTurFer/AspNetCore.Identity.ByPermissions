@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 
-namespace AspNetCore.Identity.ByPermissions.Extensions
+namespace AspNetCore.Identity.ByPermissions
 {
     public static class PermissionsExtensions
     {

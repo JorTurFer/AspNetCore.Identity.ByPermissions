@@ -3,11 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using AspNetCore.Identity.ByPermissions;
-using Identity_By_Permissions_Example.Extensions;
-using Identity_By_Permissions_Example.Helpers;
-using Identity_By_Permissions_Example.Models;
-using Identity_By_Permissions_Example.Models.PermissionsViewModels;
+using AspNetCore.Identity.ByPermissions.Areas.Permissions.Models.PermissionsViewModels;
+using AspNetCore.Identity.ByPermissions.Extensions;
+using AspNetCore.Identity.ByPermissions.Helpers;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -19,9 +17,9 @@ namespace AspNetCore.Identity.ByPermissions.Areas.Permissions.Controllers
     {
         readonly RoleManager<IdentityRole> _roleManager;
         readonly IPermissionService _permissionService;
-        readonly UserManager<ApplicationUser> _userManager;
+        readonly UserManager<IdentityUser> _userManager;
 
-        public PermissionsController(RoleManager<IdentityRole> roleManager, UserManager<ApplicationUser> userManager, IPermissionService permissionService)
+        public PermissionsController(RoleManager<IdentityRole> roleManager, UserManager<IdentityUser> userManager, IPermissionService permissionService)
         {
             _roleManager = roleManager;
             _permissionService = permissionService;
