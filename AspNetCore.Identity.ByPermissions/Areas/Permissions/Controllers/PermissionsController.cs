@@ -11,8 +11,9 @@ using Identity_By_Permissions_Example.Models.PermissionsViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Identity_By_Permissions_Example.Controllers
+namespace AspNetCore.Identity.ByPermissions.Areas.Permissions.Controllers
 {
+    [Area("Permissions")]
     [Route("[controller]/[action]")]
     public class PermissionsController : Controller
     {
