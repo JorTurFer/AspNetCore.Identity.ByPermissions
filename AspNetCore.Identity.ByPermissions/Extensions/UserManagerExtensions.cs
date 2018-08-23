@@ -47,8 +47,8 @@ namespace AspNetCore.Identity.ByPermissions.Extensions
             }).ToList();
             var result = new UsersPageDataViewModel
             {
-                //TotalUsers = count,
-                //Users = data,
+                TotalUsers = count,
+                Users = data,
             };
             return result;
         }

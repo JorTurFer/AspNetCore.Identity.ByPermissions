@@ -42,9 +42,7 @@
                     @if ((await AuthorizationService.AuthorizeAsync(User, "Contact")).Succeeded)
                     {
                         <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                    }
-                    <li><a asp-area="Permissions" asp-controller="Permissions" asp-action="Index">View from library</a></li>
-                    <li><a asp-area="Permissions" asp-controller="Permissions" asp-action="OverrideExample">Override</a></li>
+                    }                    
                 </ul>
                 @await Html.PartialAsync("_LoginPartial")
             </div>

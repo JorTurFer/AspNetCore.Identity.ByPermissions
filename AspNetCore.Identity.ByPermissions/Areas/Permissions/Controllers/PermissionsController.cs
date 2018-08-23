@@ -7,6 +7,7 @@ using AspNetCore.Identity.ByPermissions.Areas.Permissions.Models;
 using AspNetCore.Identity.ByPermissions.Areas.Permissions.Models.PermissionsViewModels;
 using AspNetCore.Identity.ByPermissions.Extensions;
 using AspNetCore.Identity.ByPermissions.Helpers;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,6 +15,7 @@ namespace AspNetCore.Identity.ByPermissions.Areas.Permissions.Controllers
 {
     [Area("Permissions")]
     [Route("[controller]/[action]")]
+    [Authorize]
     public class PermissionsController : Controller
     {
         readonly RoleManager<IdentityRole> _roleManager;
