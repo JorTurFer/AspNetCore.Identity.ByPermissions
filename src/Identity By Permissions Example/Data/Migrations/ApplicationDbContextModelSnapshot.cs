@@ -125,7 +125,7 @@ namespace Identity_By_Permissions_Example.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("Identity_By_Permissions_Example.Models.ApplicationUser", b =>
+            modelBuilder.Entity("Identity_By_Permissions_Example.Models.IdentityUser", b =>
                 {
                     b.Property<string>("Id");
 
@@ -184,7 +184,7 @@ namespace Identity_By_Permissions_Example.Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("Identity_By_Permissions_Example.Models.ApplicationUser")
+                    b.HasOne("Identity_By_Permissions_Example.Models.IdentityUser")
                         .WithMany("Claims")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -192,7 +192,7 @@ namespace Identity_By_Permissions_Example.Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("Identity_By_Permissions_Example.Models.ApplicationUser")
+                    b.HasOne("Identity_By_Permissions_Example.Models.IdentityUser")
                         .WithMany("Logins")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -205,7 +205,7 @@ namespace Identity_By_Permissions_Example.Data.Migrations
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("Identity_By_Permissions_Example.Models.ApplicationUser")
+                    b.HasOne("Identity_By_Permissions_Example.Models.IdentityUser")
                         .WithMany("Roles")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);

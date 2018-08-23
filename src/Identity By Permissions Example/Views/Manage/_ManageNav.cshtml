@@ -1,5 +1,5 @@
 ﻿@using Identity_By_Permissions_Example.Views.Manage
-@inject SignInManager<ApplicationUser> SignInManager
+@inject SignInManager<IdentityUser> SignInManager
 @{
     var hasExternalLogins = (await SignInManager.GetExternalAuthenticationSchemesAsync()).Any();
 }

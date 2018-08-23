@@ -21,7 +21,7 @@ namespace Identity_By_Permissions_Example.Extensions
         /// <param name="sort">Sort By:</param>
         /// <param name="ascending">Sort ascending or descending</param>
         /// <returns></returns>
-        public static UsersPageDataViewModel GetUserPageAsync(this UserManager<ApplicationUser> _manager, string text, int page, int pageSize, string sort, bool @ascending)
+        public static UsersPageDataViewModel GetUserPageAsync(this UserManager<IdentityUser> _manager, string text, int page, int pageSize, string sort, bool @ascending)
         {
             var usersQuery = _manager.Users;
             switch (sort.ToLower())

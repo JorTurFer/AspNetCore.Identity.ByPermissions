@@ -20,9 +20,9 @@ namespace AspNetCore.Identity.ByPermissions.Areas.Permissions.Controllers
     {
         readonly RoleManager<IdentityRole> _roleManager;
         readonly IPermissionService _permissionService;
-        readonly UserManager<ApplicationUser> _userManager;
+        readonly UserManager<IdentityUser> _userManager;
 
-        public PermissionsController(RoleManager<IdentityRole> roleManager, UserManager<ApplicationUser> userManager, IPermissionService permissionService)
+        public PermissionsController(RoleManager<IdentityRole> roleManager, UserManager<IdentityUser> userManager, IPermissionService permissionService)
         {
             _roleManager = roleManager;
             _permissionService = permissionService;
