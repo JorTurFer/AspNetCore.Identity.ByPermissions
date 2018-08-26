@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Reflection;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace AspNetCore.Identity.ByPermissions
 {
@@ -13,12 +14,10 @@ namespace AspNetCore.Identity.ByPermissions
         static PermissionService()
         {
             _permissions = new List<PermissionItem>();
-            //Get the assembly
-            Assembly asm = Assembly.GetEntryAssembly();
 
             //Get the controllers
-            var controllers = asm.GetTypes()
-            .Where(type => typeof(Controller).IsAssignableFrom(type)); //filter controllers
+            var controllers = AppDomain.CurrentDomain.GetAssemblies().SelectMany(x => x.GetTypes())
+                .Where(x => x.IsSubclassOf(typeof(Controller)));
 
             int nGroup = 0;
             foreach (var controller in controllers)
