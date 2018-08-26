@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>AspNetCore.Identity.ByPermissions</AssemblyName>
     <Copyright>Jorge Turrado Ferrero</Copyright>
     <PackageProjectUrl>https://github.com/JorTurFer/AspNetCore.Identity.ByPermissions</PackageProjectUrl>
@@ -18,10 +18,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.1.1" />
-    <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="2.1.1" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.1.2" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.1.0" />
   </ItemGroup>
 
 </Project>
