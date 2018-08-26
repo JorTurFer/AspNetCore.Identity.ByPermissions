@@ -6,6 +6,38 @@ In the RazorPage branch I'm doing the views code to do full usage package. The b
 ## Information in build
 Soon I am going to write the documentation, sorry...
 
+1. Register the "Permissions Service"
+```cSharp
+public void ConfigureServices(IServiceCollection services)
+{
+  ....
+  services.AddAuthorization(options =>
+  {
+      options.AddPermissions(new PermissionService());
+  });
+  ....
+}
+```
+2. Add the Permissions in the "Controllers" and "Actions"
+```cSharp
+//[AttributePermission("Permission Name","Description")]
+[Permission("Home",  "Can access to Home Controller")]
+public class HomeController : Controller
+{
+  public IActionResult Index()
+  {
+    return View();
+  }
+  //This line add a Permissions named "About" with a description and assigned to the action
+  [Permission("About",  "Can see about page")]
+  public IActionResult About()
+  {
+    ViewData["Message"] = "Your application description page.";
+    return View();
+  }
+}
+```
+
 ## Compilation
 
 |Branch|AppVeyor|Travis|
