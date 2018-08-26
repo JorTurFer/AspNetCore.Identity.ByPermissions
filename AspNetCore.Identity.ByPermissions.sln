@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2018
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Identity By Permissions Example", "src\Identity By Permissions Example\Identity By Permissions Example.csproj", "{037EF9FB-A279-4C60-9BBE-82BE727DC988}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCore.Identity.ByPermissions", "src\AspNetCore.Identity.ByPermissions\AspNetCore.Identity.ByPermissions.csproj", "{73284C27-6347-41C9-826E-A6EB7057678E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCore.Identity.ByPermissions", "src\AspNetCore.Identity.ByPermissions\AspNetCore.Identity.ByPermissions.csproj", "{CA9AE6B3-D397-40B7-A40C-7AA10A935CF1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Identity By Permissions Example", "src\Identity By Permissions Example\Identity By Permissions Example.csproj", "{037EF9FB-A279-4C60-9BBE-82BE727DC988}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{73284C27-6347-41C9-826E-A6EB7057678E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73284C27-6347-41C9-826E-A6EB7057678E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73284C27-6347-41C9-826E-A6EB7057678E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73284C27-6347-41C9-826E-A6EB7057678E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{037EF9FB-A279-4C60-9BBE-82BE727DC988}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{037EF9FB-A279-4C60-9BBE-82BE727DC988}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{037EF9FB-A279-4C60-9BBE-82BE727DC988}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{037EF9FB-A279-4C60-9BBE-82BE727DC988}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CA9AE6B3-D397-40B7-A40C-7AA10A935CF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CA9AE6B3-D397-40B7-A40C-7AA10A935CF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CA9AE6B3-D397-40B7-A40C-7AA10A935CF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CA9AE6B3-D397-40B7-A40C-7AA10A935CF1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
