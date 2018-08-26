@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27703.2018
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Identity By Permissions Example", "src\Identity By Permissions Example\Identity By Permissions Example.csproj", "{037EF9FB-A279-4C60-9BBE-82BE727DC988}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCore.Identity.ByPermissions", "AspNetCore.Identity.ByPermissions\AspNetCore.Identity.ByPermissions.csproj", "{CA9AE6B3-D397-40B7-A40C-7AA10A935CF1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCore.Identity.ByPermissions", "src\AspNetCore.Identity.ByPermissions\AspNetCore.Identity.ByPermissions.csproj", "{CA9AE6B3-D397-40B7-A40C-7AA10A935CF1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
